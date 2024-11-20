@@ -1,0 +1,65 @@
+<template>
+    <div class="loading-spinner" id="loadingSpinner"></div>
+    <div label="App">
+        <header class="App-header">
+            <h1 class="App-title">Bulk API V2 Demo: Increasing download speed</h1>
+        </header>
+        <div class="container">
+            <div class="query-section">
+                <input name="queryInput" type="text" value={queryInput} onchange={onQueryInputChange}
+                       placeholder="Enter your query"/>
+                <button onclick={resetQuery}>Reset</button>
+                <button onclick={createJob}>Create Job</button>
+                <button onclick={getJobInfo}>Get Job Info</button>
+                <button onclick={downloadResults}>Download Results</button>
+            </div>
+
+            <div class="story-steps-container">
+                <div class="story-step">
+
+                    <h2>
+                        <input type="radio" name="story-step" value="Serial" onchange={onStepChange} />
+                           Serial Data Download
+                    </h2>
+                    <p>Start by serially downloading results from the API, ensuring each request is processed one after
+                        the other.</p>
+                    <template if:true={temporaryVar}>
+                        <div class="query-section" id="maxRecordsAndLocator">
+                            <div class="text" >
+                                <p>Max Records
+                                    <input type="text" value={maxRecords} onchange={onMaxRecordsInputChange} name="maxRecords"  maxlength="30">
+                                </p>
+                            </div>
+                            <div class="text">
+                                <p>Locator
+                                    <input type="text" value={locator} onchange={onLocatorInputChange} name="locator" maxlength="30">
+                                </p>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+
+                <div class="story-step">
+                    <h2>
+                        <input type="radio" name="story-step" value="Parallel" onchange={onStepChange} />
+                        Parallel Data Download
+                    </h2>
+                    <p>Experience the power of parallel data downloads, where multiple API requests can be run concurrently.</p>
+                </div>
+
+                <div class="story-step">
+                    <h2>
+                        <input type="radio" name="story-step" value="Event" onchange={onStepChange} />
+                        Event-driven Data Subscription
+                    </h2>
+                    <p>Utilize event-driven architecture to subscribe to API events and download results as they become available.</p>
+                </div>
+            </div>
+            <div class="results-box" id="resultsBox">
+                <pre>{results}</pre>
+            </div>
+
+            </div>
+
+    </div>
+</template>

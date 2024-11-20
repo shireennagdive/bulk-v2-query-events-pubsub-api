@@ -1,0 +1,29 @@
+{
+  "layoutsDir": "$rootDir/client/layouts",
+  "lwc": {
+    "modules": [{ "dir": "$rootDir/client/modules" }]
+  },
+  "bundleConfig": { "exclude": ["lwc", "@lwc/synthetic-shadow"] },
+  "assets": [
+    {
+      "alias": "assetsDir",
+      "dir": "$rootDir/client/assets",
+      "urlPath": "/assets"
+    },
+    {
+      "file": "$rootDir/src/assets/icons/utility-sprite/svg/symbols.svg",
+      "urlPath": "/lightning.utilitySprite"
+    }
+  ],
+  "routes": [
+    {
+      "id": "home",
+      "path": "/",
+      "rootComponent": "ui/app",
+      "layoutTemplate": "$layoutsDir/index.html",
+      "bootstrap": {
+        "syntheticShadow": true
+      }
+    }
+  ]
+}
