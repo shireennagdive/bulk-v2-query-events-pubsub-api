@@ -21,8 +21,6 @@ export default class BulkV2QueryResource {
         let jobId = request.params.jobId;
         let maxRecords = request.query.maxRecords;
         let locator = request.query.locator;
-        console.log("maxRecords : " + request.query.maxRecords)
-        console.log("locator : " + request.query.locator)
         let url = Configuration.getLoginUrl() + 'services/data/v61.0/jobs/query/' + jobId + '/results';
         if (maxRecords !== undefined) {
             url += '?maxRecords=' + maxRecords;
@@ -33,7 +31,6 @@ export default class BulkV2QueryResource {
             url += '?locator=' + locator;
         }
         const result = await this.connection.request(url);
-        console.log("Headers : ", response.headers);
         response.send( {result} )
     }
 

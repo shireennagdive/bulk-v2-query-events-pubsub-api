@@ -1,5 +1,4 @@
 import jsforce from 'jsforce';
-import * as dotenv from 'dotenv';
 
 export default class SalesforceClient {
     connection;
