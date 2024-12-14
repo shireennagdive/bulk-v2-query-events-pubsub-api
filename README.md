@@ -41,7 +41,7 @@ Once deployed, see the [configuration reference](#configuration-reference) secti
 1. Create a `.env` file at the root of the project
 
     ```properties
-    SALESFORCE_AUTH_TYPE="username-password" or "user-supplied"
+    SALESFORCE_AUTH_TYPE="username-password"
     SALESFORCE_LOGIN_URL="https://test.salesforce.com"
     SALESFORCE_API_VERSION="56.0"
     SALESFORCE_USERNAME="YOUR_SALESFORCE_USERNAME"
