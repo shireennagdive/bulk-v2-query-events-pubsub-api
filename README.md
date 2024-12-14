@@ -8,7 +8,7 @@ See the [official Pub/Sub API repo](https://github.com/developerforce/pub-sub-ap
 
 See the pub-sub-api-node-client(https://github.com/pozil/pub-sub-api-node-client) for information on how to integrate this node client in an application
 
-Note : For eventing capability to work and this app to start, make sure the `PartialDownloadAndJobEvent` org preference is turned on for your org 
+> Note : For eventing capability to work and this app to start, make sure the `PartialDownloadAndJobEvent` org preference is turned on for your org 
 
 This demo is built with the Lightning Web Runtime and demonstrates subscribing to 'BulkApi2JobEvent' using Pub/Sub API. 
 
