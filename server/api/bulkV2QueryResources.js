@@ -7,12 +7,12 @@ export default class BulkV2QueryResource {
 
     async getJobInfo(request, response){
         let jobId = request.params.jobId;
-        const result = await this.connection.request(Configuration.getLoginUrl()+'services/data/v62.0/jobs/query/'+jobId);
+        const result = await this.connection.request(Configuration.getLoginUrl()+'services/data/v63.0/jobs/query/'+jobId);
         response.send( {result} )
     }
 
     async createJob(request, response){
-        const result = await this.connection.requestPost(Configuration.getLoginUrl()+'services/data/v62.0/jobs/query', request.body);
+        const result = await this.connection.requestPost(Configuration.getLoginUrl()+'services/data/v63.0/jobs/query', request.body);
         response.send( {result} )
     }
 
@@ -21,7 +21,7 @@ export default class BulkV2QueryResource {
         let jobId = request.params.jobId;
         let maxRecords = request.query.maxRecords;
         let locator = request.query.locator;
-        let url = Configuration.getLoginUrl() + 'services/data/v62.0/jobs/query/' + jobId + '/results';
+        let url = Configuration.getLoginUrl() + 'services/data/v63.0/jobs/query/' + jobId + '/results';
         if (maxRecords !== undefined) {
             url += '?maxRecords=' + maxRecords;
             if (locator !== undefined) {
@@ -36,7 +36,7 @@ export default class BulkV2QueryResource {
 
     async getResultPages(request, response){
         let jobId = request.params.jobId;
-        const result = await this.connection.request(Configuration.getLoginUrl()+'services/data/v62.0/jobs/query/'+jobId+'/resultPages');
+        const result = await this.connection.request(Configuration.getLoginUrl()+'services/data/v63.0/jobs/query/'+jobId+'/resultPages');
         response.send( {result} )
     }
 
